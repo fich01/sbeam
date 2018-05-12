@@ -1,0 +1,64 @@
+#residential{
+    .hero{
+        background: url("../img/home-sunrise.jpg");
+        background-position: center;
+        color: white;
+    }
+    .kontenjer-slika{
+        position: relative;
+        padding: 30px;
+    }
+
+    .prvi{
+        background: url("../img/sunset.jpg") no-repeat;
+        background-size: cover;
+    }
+
+    .drugi{
+        background: url("../img/installers.jpg") no-repeat;
+        background-size: cover;
+        background-position: left;
+    }
+
+    .treci{
+        background: url("../img/monitor2.jpg") no-repeat;
+        background-position: right;
+        background-size: cover;
+    }
+
+    .zadnji{
+        background: url("../img/solar-sky2.jpg");
+        background-size: cover;
+        background-position: center;
+        color: white;
+    }
+
+    .center{
+        justify-content: center;
+        text-align: center;
+    }
+
+    .trans-backg{
+        background: rgba(255,255,255, 0.94);
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    
+}
+
+@media only screen and (min-width:768px){
+    #residential{
+
+        .kontenjer-slika{
+            p{
+                max-width: 600px;
+            }
+        }
+        .desno{
+            text-align: right;
+            justify-content: flex-end;
+        }
+    }
+    
+}

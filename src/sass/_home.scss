@@ -1,0 +1,206 @@
+#home{
+    .hero{
+        background: url("../img/solar.jpg")  no-repeat;
+        background-position: 50% 20%;
+        @include tablets{
+            background-position: 50% 10%;
+        }
+        h1{
+            text-shadow: 2px 2px 20px white;
+            color: white;
+        }
+    }
+
+    .grid{
+        display: grid;
+        grid-template-rows: repeat(3, 180px 220px) repeat(3, 300px) 300px;
+    }
+
+    .card{
+        h2{
+            margin-bottom: 0;
+        }
+        a{
+            color: black;
+        }
+    }
+    
+    .card-first{
+        padding-top: 30px;
+    }
+    
+
+    .card-ext{
+        h3{
+            display: none;
+        }
+    }
+
+    .kontenjer{
+        h2{
+            margin: 0;
+        }
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .konDrugi{
+        text-align: right;
+        flex-wrap: wrap-reverse;
+    }
+
+    .kontenjer-slika{
+        justify-content: center;
+        background: url("../img/solar-sky.jpg");
+        background-size: cover;
+    }
+
+    #slikaPrva, #slikaDruga, #slikaTreca{
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width:768px){
+    #home{
+        .grid{
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: 200px 300px repeat(4, 400px);
+            grid-template-areas: 
+            "cdf cdf cds cds cdt cdt"
+            "act act act act act act"
+            "k1 k1 k1 sp sp sp "
+            "sd sd sd k2 k2 k2 "
+            "k3 k3 k3 st st st "
+            "ks ks ks ks ks ks";
+        }
+
+        .card{
+            position: relative;
+            padding: 30px 0;
+            a{
+                display: block;
+            }
+        }
+    
+        .card-first{
+            grid-area: cdf;
+        }
+    
+        .card-second{
+            grid-area: cds;
+        }
+    
+        .card-third{
+            grid-area: cdt;
+        }
+
+        .card-ext{
+            position: relative;
+            z-index: 20;
+        }
+
+        .ext-prvi{
+            background: url("../img/solar-panels.jpg");
+            background-size: cover;
+        }
+        .ext-drugi{
+            background: url("../img/solar-sky.jpg");
+            background-position: 50%;
+            background-size: cover;
+        }
+        .ext-treci{
+            background: url("../img/products.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .overlay-background{
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255, 0.8);
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 0;
+            z-index: -3;
+        }
+
+        .active{
+            z-index: 20;
+            height: 300px;
+            grid-area: act;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            justify-content: center;
+            h3{
+                display: block;
+                margin-bottom: 0;
+                margin-top: 0px;
+            }
+            p{
+                max-width: 600px;
+            }
+            
+        }
+        
+        #slikaPrva, #slikaDruga, #slikaTreca{
+            display: block;
+        }
+
+        #slikaPrva{
+            background: url("../img/solar-leaders.jpg");
+            background-size: cover;
+            background-position: center;
+            grid-area: sp;
+        }
+
+        #slikaDruga{
+            background: url("../img/solar-roof.jpg");
+            background-size: cover;
+            background-position: center;
+            grid-area: sd;
+        }
+
+        #slikaTreca{
+            background: url("../img/industry.jpg");
+            background-size: cover;
+            background-position: center;
+            grid-area: st;
+        }
+
+        .konPrvi{
+            grid-area: k1;
+        }
+
+        .konDrugi{
+            grid-area: k2;
+        }
+
+        .konTreci{
+            grid-area: k3;
+        }
+
+        .kontenjer-slika{
+            grid-area: ks;
+            height: 400px;
+        }
+
+        .overlay{
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0,0,0, 0);
+            transition: background 0.5s ease-in;
+            &:hover{
+                background: rgba(0,0,0, 0.2);
+            }
+        }
+    }
+    
+}

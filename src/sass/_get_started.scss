@@ -1,0 +1,106 @@
+#getStarted{
+    h1{
+     text-align: center;
+     margin: 20px auto;
+     max-width: 200px;   
+    }
+
+    h2{
+        margin: 20px auto;
+        max-width: 300px;
+        text-align: center;
+    }
+
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+
+    .kontenjer-form{
+        background: $lightWhite;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        input{
+            flex-basis: 300px;
+            flex-grow: 1;
+        }
+        select{
+            flex-basis: 300px;
+            flex-grow: 1;
+        }   
+
+        input[type=submit]{
+            cursor: pointer;
+            margin: 20px;
+            flex-grow: 0;
+            flex-basis: 200px;
+        }
+        
+    }
+
+    .lijevi{
+        padding: 20px;
+    }
+
+    .desni{
+        padding: 20px;
+    }
+
+}
+
+@media only screen and (min-width:768px){
+    #getStarted{
+        .grid{
+            grid-template-columns: repeat(6, 1fr); 
+            grid-template-areas: 
+            ". . hd1 hd1 . . "
+            "fr fr fr fr fr fr "
+            ". . hd2 hd2 . . "
+            "lv lv lv ds ds ds"
+            ". . . . . ."
+        }
+
+        h2{
+            grid-area: hd2;
+            width: 320px;
+        }
+
+        .kontenjer-form{
+            grid-area: fr;
+        }
+
+        h1{
+            grid-area: hd1;
+        }
+
+        .lijevi{
+            text-align: center;
+            grid-area: lv;
+            margin-bottom: 50px;
+            border-right: 1px solid grey;
+        }
+
+        .desni{
+            text-align: center;
+            grid-area: ds;
+        }
+
+    }
+
+}
+
+@media only screen and (min-width:992px){
+    #getStarted{
+        .grid{
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-areas: 
+            ". . . hd1 hd1 . . ."
+            " . fr fr fr fr fr fr ."
+            ". . . hd2 hd2 . . ."
+            ". lv lv lv ds ds ds ."
+            ". . . . . . . ."
+        }
+    }
+}

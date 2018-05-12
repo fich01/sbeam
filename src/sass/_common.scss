@@ -1,0 +1,168 @@
+@import "header";
+@import "footer";
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
+    padding:0;
+    margin: 0;
+    font-size: 16px;
+}
+
+#wrapper{
+    display: grid;
+    box-shadow: 1px 0px 10px 0px grey;
+}
+
+footer #wrapper{
+    box-shadow: none;
+}
+
+svg{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+h1{
+    font-size: 32px;
+}
+
+h2{
+    font-size: 28px;
+}
+
+h3{
+    font-size: 24px;
+}
+
+a{
+    text-decoration:none;
+}
+
+.inactive{
+    display: none;
+}
+
+.active{
+    display:block;
+}
+
+.sivo{
+    background: $lightWhite;
+}
+
+.hamburger{
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+.hero{
+    height: 400px;
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.button{
+    display:inline-block;
+    background:$primaryOrange;
+    padding: 15px;
+    width: 160px;
+    height: 50px;
+    color: white;
+    text-align:center;
+    font-weight: bold;
+    &:hover{
+        background: $secondaryOrange;
+    }
+}
+
+input[type=submit]{
+    border: none;
+}
+
+input, select{
+    margin: 10px;
+    height: 50px;
+}
+
+select{
+    option:first-of-type{
+        color: #C7C7CD;
+    }
+}
+
+form{
+    p{
+        font-size: 11px;
+        margin: 10px;
+    }
+}
+
+.card{
+    text-align:center;
+    padding: 15px 0;
+}
+
+
+.card-ext{
+    padding: 25px;
+    text-align:center;
+    height: 220px;
+
+}
+
+.kontenjer{
+    padding: 20px 30px;
+    
+}
+
+
+
+.kontenjer-slika{
+    display: flex;
+    align-items: center;
+    height: 300px;
+}
+
+.overlay-background{
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    z-index: -3;
+}
+
+
+
+/* ------------------- 768px -------------*/
+
+@include tablets{
+    .hero{
+        height: 650px;
+    }
+    .hamburger{
+        display: none;
+    }
+
+    .kontenjer-slika{
+        height: 500px;
+    }
+}
+
+@media only screen and (min-width:992px){
+    #wrapper{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}

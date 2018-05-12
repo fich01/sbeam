@@ -1,0 +1,48 @@
+header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    font-size: 18px;
+    a:first-of-type{
+        height: 70px;
+    }
+    @include tablets{
+        flex-wrap: wrap;
+    }
+}
+
+#main-nav{
+    visibility: hidden;
+    flex-basis: 548px;
+    flex-grow: 1;
+    text-align: center;
+    //ovo funkcionira da je iznad hero imagea zato sto header ima fiksnu visinu 70px pa se kontenjer siri ispod ali se hero slozi ispod headera visine 70px
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li{
+            background: $primaryDark;
+            padding: 20px;
+            @include linkFooterNav();
+        }
+        
+    }
+    @include tablets{
+        visibility: visible;
+        ul{
+            display: flex;
+            justify-content: space-around;
+            li{
+                background: #fff;
+                @include linkFooterNav($primaryDark, $secondaryBlue);
+            }
+            
+        }
+    }
+}

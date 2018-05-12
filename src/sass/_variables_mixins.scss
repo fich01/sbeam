@@ -1,0 +1,29 @@
+$primaryDark: #2E2E2E;
+$primaryOrange: #FFA505;
+$secondaryOrange: #FFAF20;
+$primaryBlue: #004DA6;
+$secondaryBlue: #0579FF;
+$lightWhite: rgb(245, 245, 245);
+$lightWhiteTransp: rgba(245,245,245, 0.9);
+
+
+@mixin tablets{
+    @media only screen and (min-width:768px){
+        @content;
+    }
+}
+
+@mixin linkFooterNav($boja: #fff, $hover: $secondaryOrange){
+    a{
+        color: $boja;
+        &:hover{
+            color: $hover;
+        }
+    }
+}
+
+@mixin bigScreens{
+    @media only screen and (min-width:992px){
+        @content;
+    }
+}
