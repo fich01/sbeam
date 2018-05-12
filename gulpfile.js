@@ -63,14 +63,19 @@ gulp.task("imageMin", function(){
         //.pipe(browserSync.stream());
 });
 
-gulp.task("watch", function(){
-    gulp.watch("./src/sass/**/*.scss", ["cssReady"]);
-    gulp.watch("./src/*.html", ["readyHTML"]); 
-    gulp.watch("./src/js/**/*.js", ["javascriptReady"]);
-    gulp.watch("./src/img/*", ["imageMin"]);
-});
+//gulp.task("watch", function(){
+ //   gulp.watch("./src/sass/**/*.scss", ["cssReady"]);
+ //   gulp.watch("./src/*.html", ["readyHTML"]); 
+ //   gulp.watch("./src/js/**/*.js", ["javascriptReady"]);
+ //   gulp.watch("./src/img/*", ["imageMin"]);
+//});
 
-gulp.task("default", ["readyHTML", "cssReady", "javascriptReady", "imageMin", "watch"]);
+
+//sa watchom
+//gulp.task("default", ["readyHTML", "cssReady", "javascriptReady", "imageMin", "watch"]);
+
+//bez watcha - maknuto zbog netlify-ja
+gulp.task("default", ["readyHTML", "cssReady", "javascriptReady", "imageMin"]);
 
 //gulp.task("default", ["readyHTML", "cssReady", "javascriptReady", "imageMin", "browser-sync"]);
 
